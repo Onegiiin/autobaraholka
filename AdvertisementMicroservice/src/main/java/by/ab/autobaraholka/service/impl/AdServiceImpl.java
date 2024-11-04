@@ -11,6 +11,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.FluentQuery;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
@@ -24,6 +25,23 @@ public class AdServiceImpl implements AdService {
      @Override
      public List<Ad> findAllAds() {
           return repository.findAll();
+     }
+
+     @Override
+     public List<Ad> findCarsByKeyword(String keyword) {
+          String[] keywords = keyword.split("\\s+");
+
+          return repository.findAll().stream()
+                  .filter(ad -> Arrays.stream(keywords)
+                          .anyMatch(word -> ad.getCarBrand().toLowerCase().contains(word.toLowerCase()) ||
+                                  ad.getCarModel().toLowerCase().contains(word.toLowerCase())))
+                  .collect(Collectors.toList());
+     }
+     @Override
+     public String getOwnerPhoneNumber(Integer adId) {
+          return repository.findById(adId)
+                  .map(ad -> ad.getAuthor().getPhone())
+                  .orElse("Owner not found");
      }
 
      @Override

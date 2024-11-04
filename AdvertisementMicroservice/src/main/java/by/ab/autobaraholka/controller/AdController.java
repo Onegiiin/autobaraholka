@@ -19,6 +19,16 @@ public class AdController {
         return service.findAllAds();
     }
 
+    @GetMapping("/search")
+    public List<Ad> findCarByKeyword(@RequestParam String keyword) {
+        return service.findCarsByKeyword(keyword);
+    }
+
+    @GetMapping("/{adId}/owner_phone")
+    public String getOwnerPhoneNumber(@PathVariable Integer adId) {
+        return service.getOwnerPhoneNumber(adId);
+    }
+
     @PostMapping("save_ad")
     public String saveAd(@RequestBody Ad ad, @RequestHeader("Authorization") String authorizationHeader) {
         return service.saveAd(ad, getToken(authorizationHeader)) != null ? "Success" : "Failure";

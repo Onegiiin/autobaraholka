@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface AdService {
      List<Ad> findAllAds();
+     List<Ad> findCarsByKeyword(String keyword);
+     String getOwnerPhoneNumber(Integer adId);
      List<Ad> findWithFilters(CarFilter filter);
      Ad saveAd(Ad ad, String token);
      Ad findById(Integer id);
