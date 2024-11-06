@@ -18,35 +18,6 @@ public class UserServiceImpl implements UserService {
      private final UserRepository repository;
 
      @Override
-     public List<User> findAllUsers() {
-          return repository.findAll();
-     }
-
-     @Override
-     public User saveUser(User user) {
-          user.setLastOnline(LocalDateTime.now());
-          return repository.save(user);
-     }
-
-     @Override
-     public User findById(Integer id) {
-          return repository.findById(id).orElse(null);
-     }
-
-     @Override
-     public User updateUser(User user) {
-          if (repository.existsById(user.getId())) {
-               return repository.save(user);
-          }
-          return null;
-     }
-
-     @Override
-     public void deleteUser(Integer id) {
-          repository.deleteById(id);
-     }
-
-     @Override
      public boolean containsToken(String token) {
           // TODO
           return true;
