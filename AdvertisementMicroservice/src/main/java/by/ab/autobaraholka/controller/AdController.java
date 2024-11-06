@@ -24,12 +24,12 @@ public class AdController {
         return service.findCarsByKeyword(keyword);
     }
 
-    @GetMapping("/{adId}/owner-phone")
+    @GetMapping("/{adId}/owner_phone")
     public String getOwnerPhoneNumber(@PathVariable Integer adId) {
         return service.getOwnerPhoneNumber(adId);
     }
 
-    @PostMapping("save-ad")
+    @PostMapping("save_ad")
     public String saveAd(@RequestBody Ad ad, @RequestHeader("Authorization") String authorizationHeader) {
         return service.saveAd(ad, getToken(authorizationHeader)) != null ? "Success" : "Failure";
     }
@@ -38,12 +38,12 @@ public class AdController {
         return service.findById(id);
     }
 
-    @PutMapping("update-ad")
+    @PutMapping("update_ad")
     public String updateAd(@RequestBody Ad ad, @RequestHeader("Authorization") String authorizationHeader){
         return service.updateAd(ad, getToken(authorizationHeader)) != null ? "Success" : "Failure";
     }
 
-    @DeleteMapping("delete-ad/{id}")
+    @DeleteMapping("delete_ad/{id}")
     public String deleteAd(@PathVariable Integer id, @RequestHeader("Authorization") String authorizationHeader){
         return service.deleteAd(id, getToken(authorizationHeader)) ? "Success" : "Failure";
     }

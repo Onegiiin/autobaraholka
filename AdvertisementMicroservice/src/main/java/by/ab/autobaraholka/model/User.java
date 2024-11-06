@@ -25,9 +25,6 @@ public class User {
     @Column(name = "user_last_online")
     private LocalDateTime lastOnline;
 
-    @Column(name = "user_email")
-    private String email;
-
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<Ad> ads;
