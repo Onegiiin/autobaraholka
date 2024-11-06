@@ -2,19 +2,11 @@ package by.ab.autobaraholka.service.impl;
 
 import by.ab.autobaraholka.model.*;
 import by.ab.autobaraholka.service.AdService;
-import by.ab.autobaraholka.service.UserService;
 import lombok.AllArgsConstructor;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.repository.query.FluentQuery;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service
