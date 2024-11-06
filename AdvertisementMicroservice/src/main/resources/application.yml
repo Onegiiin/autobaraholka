@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: autobaraholka
+  datasource:
+    url: jdbc:mysql://localhost:3306/autobaraholka
+    password: 1111
+    username: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
