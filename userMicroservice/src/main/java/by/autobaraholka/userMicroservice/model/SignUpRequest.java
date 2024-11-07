@@ -29,6 +29,6 @@ public class SignUpRequest {
     private String email;
 
     @Schema(description = "Пароль", example = "my_1secret1_password")
-    @Size(min = 5, max = 255, message = "Длина пароля должна быть не менее 5 и не более 255 символов")
+    @Size(min = 5, max = 255, message = "Пароль должен содержать от 5 до 255 символов")
     private String password;
 }
