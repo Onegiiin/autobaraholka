@@ -7,13 +7,12 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collections;
 import java.util.List;
 
 @RestController
 @RequestMapping("/recommendations")
 @AllArgsConstructor
-public class recController {
+public class RecController {
     private final RecService service;
 
     @PostMapping("save-search/{userId}")

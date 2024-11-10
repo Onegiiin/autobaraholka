@@ -21,11 +21,11 @@ public class Ad {
     @Column(name = "ad_price")
     private int price;
 
-    @ManyToOne
-    @JoinColumn(name = "ad_author_id")
-    private User author;
-
     @OneToOne
     @JoinColumn(name = "ad_car_stats")
     private CarStats carStats;
+
+    @ManyToOne
+    @JoinColumn(name = "ad_author_id")
+    private User author;
 }

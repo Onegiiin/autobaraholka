@@ -1,6 +1,7 @@
 package by.ab.autobaraholka.service.impl;
 
 import by.ab.autobaraholka.model.*;
+import by.ab.autobaraholka.repository.AdRepository;
 import by.ab.autobaraholka.service.AdService;
 import by.ab.autobaraholka.service.UserService;
 import lombok.AllArgsConstructor;
